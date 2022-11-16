@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>C++ Array</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+html,body.dark-mode {
+        background-color: black;
+        color: white;
+      }
+html,body.light-mode {
+        background-color: white;
+        color: black;
+      }
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="C:\SEM 2 PROJECT\Home.html" target="_self" class="w3-bar-item w3-button w3-theme-l1">BroCodes</a>
+    <a href="C:\SEM 2 PROJECT\Intro.html" target="_self" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Tutorials</a>
+    <a href="C:\SEM 2 PROJECT\FACTS.html" target="_blank"  class="w3-bar-item w3-button w3-hide-small w3-hover-white">Quiz</a>
+    <a href="C:\SEM 2 PROJECT\ABOUT.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white" target="_blank">About</a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download (1).png" height="26" width="26" onclick="darkMode();"></a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download.png" height="26" width="26" onclick="lightMode();"></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h3 class="w3-bar-item"><img src="C:\SEM 2 PROJECT\BroCodes Logo.png" width="200" height="100"></h3>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Intro.html" target="_self">Introduction</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\History.html" target="_self">History</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Comments.html" target="_self">Comments</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\variables.html" target="_self">Variables</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Datatypes.html" target="_self">Datatypes</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Strings.html" target="_self">Strings</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Operators.html" target="_self">Operators</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Conditions.html" target="_self">Conditions</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Switch.html" target="_self">Switch Case</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\While.html" target="_self">While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\DoWhile.html" target="_self">Do.. While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\For.html" target="_self">For Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Break.html" target="_self">Break Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Continue.html" target="_self">Continue Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Arrays.html" target="_self">Arrays</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:firebrick;"><b><i><u>C++ Arrays</u></i></b></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        An array in C/C++ or be it in any programming language is a collection of similar data items stored at contiguous memory locations and elements can be accessed randomly using indices of an array. <br>
+         They can be used to store collection of primitive data types such as int, float, double, char, etc of any particular type. <br>
+        To add to it, an array in C/C++ can store derived data types such as the structures, pointers etc.<br><br>
+   <b style="color: firebrick;"><u>ARRAY:-</u></b>
+<ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+    <li>It is a group of variables of similar data types referred by single element.</li>
+   <li>It elements are stored in a contiguous memory location.</li>
+    <li>The size of array should be mentioned while declaring it.</li>
+    <li>Array elements are always counted from zero (0) onward.</li>
+    <li>Array elements can be accessed using the position of the element in the array.</li>
+    <li>Array can have one or more dimensions.</li>
+</ol><br><br>
+<p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">We can use normal variables (v1, v2, v3, ..) when we have a small number of objects, but if we want to store a large number of instances, it becomes difficult to manage them with normal variables. <br>
+The idea of an array is to represent many instances in one variable.<br><br>
+<b style="color: firebrick;"><u><i>ARRAY DECLARATION SYNTAX:-</u></b></i><br><br>
+datatype variable_name[size];   <br><br>
+<b style="color: firebrick;"><u><i>ARRAY DECLARATION EXAMPLE:-</u></b></i><br><br>
+int arr1[10];   <br><br>
+</p></p>
+      </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:firebrick;"><b><i><u>Advantages and Disadvantages of Arrays:-</u></i></b></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+       <b style="color:green;"><u>The advantages of Arrays are as follows:-</u></b> <br><br>
+        <ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+          <li>Arrays represent multiple data items of the same type using a single name..</li>
+          <li>In arrays, the elements can be accessed randomly by using the index number.</li>
+          <li>Arrays allocate memory in contiguous memory locations for all its elements. Hence there is no chance of extra memory being allocated in case of arrays. This avoids memory overflow or shortage of memory in arrays.</li>
+        </ol>
+        <br><br>
+        <b style="color:green;"><u>The disadvantages of Arrays are as follows:-</u></b>
+        <ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+          <li>The number of elements to be stored in an array should be known in advance.</li>
+          <li>An array is a static structure (which means the array is of fixed size). Once declared the size of the array cannot be modified. The memory which is allocated to it cannot be increased or decreased.</li>
+          <li>Insertion and deletion are quite difficult in an array as the elements are stored in consecutive memory locations and the shifting operation is costly.</li>
+          <li>Allocating more memory than the requirement leads to wastage of memory space and less allocation of memory also leads to a problem.</li>
+</ol></p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:firebrick;"><b><i><u>Example:-</u></i></b></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        <textarea id="PROGRAM" rows="18" cols="50" style="border: 3px dashed firebrick; resize: none;">
+          #include<iostream>
+          using namespace std;         
+          int main()
+          {
+              int arr[6]={11,12,13,14,15,16};
+              // Way 1
+              for(int i=0;i<6;i++)
+                  cout<<arr[i]<<" ";
+            cout<<endl;
+            // Way 2
+              cout<<"By Other Method:"<<endl;
+              for(int i=0;i<6;i++)
+                  cout<<i[arr]<<" ";
+              cout<<endl;
+              return 0;
+          }
+        </textarea>
+        <button id="copyID" onclick="myFunction()" value="COPY">Copy Code</button>
+    <script type="text/javascript">
+      function myFunction() 
+      {
+  /* Get the text field */
+  var copyText = document.getElementById("PROGRAM");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("The code has been copied to clipboard");
+var rand_url=new Array()
+rand_url[0]="https://www.programiz.com/cpp-programming/online-compiler/";
+            rand_url[1]="https://www.onlinegdb.com/online_c++_compiler";
+            rand_url[2]="https://www.interviewbit.com/online-cpp-compiler/";
+            rand_url[3]="https://www.tutorialspoint.com/compile_cpp_online.php";
+    var rand_num=Math.floor(Math.random()*4);
+window.location=rand_url[rand_num]
+}
+    </script>
+       </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\Continue.html" target="_self">Previous</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\ARRAY_QUIZ.html" target="_blank">QUIZ ON ARRAY</a>
+    </div>
+  </div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+  function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode is ON";
+      }
+      function lightMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "light-mode";
+        content.innerText = "Dark Mode is OFF";
+      }
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

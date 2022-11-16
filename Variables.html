@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>C++ Variables</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+html,body.dark-mode {
+        background-color: black;
+        color: white;
+      }
+html,body.light-mode {
+        background-color: white;
+        color: black;
+      }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="C:\SEM 2 PROJECT\Home.html" target="_self" class="w3-bar-item w3-button w3-theme-l1">BroCodes</a>
+    <a href="C:\SEM 2 PROJECT\Intro.html" target="_self" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Tutorials</a>
+    <a href="C:\SEM 2 PROJECT\FACTS.html" target="_blank"  class="w3-bar-item w3-button w3-hide-small w3-hover-white">Quiz</a>
+    <a href="C:\SEM 2 PROJECT\ABOUT.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white" target="_blank">About</a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download (1).png" height="26" width="26" onclick="darkMode();"></a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download.png" height="26" width="26" onclick="lightMode();"></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h3 class="w3-bar-item"><img src="C:\SEM 2 PROJECT\BroCodes Logo.png" width="200" height="100"></h3>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Intro.html" target="_self">Introduction</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\History.html" target="_self">History</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Comments.html" target="_self">Comments</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECTvariables.html" target="_self">Variables</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Datatypes.html" target="_self">Datatypes</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Strings.html" target="_self">Strings</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Operators.html" target="_self">Operators</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Conditions.html" target="_self">Conditions</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Switch.html" target="_self">Switch Case</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\While.html" target="_self">While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\DoWhile.html" target="_self">Do.. While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\For.html" target="_self">For Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Break.html" target="_self">Break Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Continue.html" target="_self">Continue Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Array.html" target="_self">Arrays</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><i><u><b><h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:gold ;">C++ Variables:-</u></i></b></h1></h1>
+    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px;">A variable is a name given to a memory location. It is the basic unit of storage in a program. <br>
+        The value stored in a variable can be changed during program execution.<br>
+        A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.<br>
+        In C++, all the variables must be declared before use. <br><br>
+        In C++, there are different types of variables (defined with different keywords), for example:<br><br>
+        <ol style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <li>int - stores integers (whole numbers), without decimals, such as 123 or -123</li>
+            <li>double - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
+            <li>char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes</li>
+            <li>string - stores text, such as "Hello World". String values are surrounded by double quotes</li>
+            <li>bool - stores values with two states: true or false
+        </ol><br><br>
+        <i><b><u><h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: gold;">Rules For Declaring Variables:-</i></u></b></h2><br>
+        <ol style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px;">
+          <li>The name of the variable contain letters, digits, and underscores.</li>
+          <li>The name of the variable are case sensitive (ex Arr and arr both are different variable).</li>
+          <li>The name of the variable does not contain any whitespace and special charachters (ex #,$,%,* etc).</li>
+          <li>All the variable name must begin with a letter of the alphabet or an underscore(_). </li>
+          <li>We cannot used C++ keyword(ex float,double,class)as a variable name.</li>
+    </ol><br>
+  <h2 style="color: gold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b><i><u>Types of Variables:-</i></b></u></h2><br><br>
+ <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px;"> There are three types of variables based on the scope of variables in C++: <br>
+ <ul style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;font-size: 16px;">
+  <li>Local Variables</li>
+  <li>Instance Variables</li>
+  <li>Static Variables</li>
+ </ul></p>
+<br>
+<ol>
+  
+  <li style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b style="color: gold;"><u>Local Variables:-</u></b> A variable defined within a block or method or constructor is called a local variable. </li>
+  <ul style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; font-size: 16px;">
+    <li>These variables are created when entered into the block or the function is called and destroyed after exiting from the block or when the call returns from the function.</li>
+    <li>The scope of these variables exists only within the block in which the variable is declared. i.e. we can access this variable only within that block.</li>
+    <li>Initialization of Local Variable is Mandatory.</li>
+  </ul>
+<li style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"><b style="color: gold;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><u>Instance Variables:-</u></b>Instance variables are non-static variables and are declared in a class outside any method, constructor or block. </li>
+    <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px;">
+      <li>As instance variables are declared in a class, these variables are created when an object of the class is created and destroyed when the object is destroyed.</li>
+      <li>Unlike local variables, we may use access specifiers for instance variables. If we do not specify any access specifier then the default access specifier will be used.</li>
+      <li>Initialization of Instance Variable is not Mandatory.</li>
+      <li>Instance Variable can be accessed only by creating objects.</li>
+    </ul>
+<li style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px;"><b style="color: gold;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><u>Static Variables:-</u></b>Static variables are also known as Class variables.</li>
+<ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+  <li>These variables are declared similarly as instance variables, the difference is that static variables are declared using the static keyword within a class outside any method constructor or block.</li>
+  <li>Unlike instance variables, we can only have one copy of a static variable per class irrespective of how many objects we create.</li>
+  <li>Static variables are created at the start of program execution and destroyed automatically when execution ends.</li>
+  <li>Initialization of Static Variable is not Mandatory. Its default value is 0</li>  
+  <li>If we access the static variable like the Instance variable (through an object), the compiler will show the warning message and it won’t halt the program. The compiler will replace the object name with the class name automatically.</li>
+  <li>If we access the static variable without the class name, the Compiler will automatically append the class name.</li> 
+</ul></ol></p></p>
+</div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h3 style="color: gold; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b><i><u>Declaring (Creating) Variables:-</u></i></b></h3></h1>
+      <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"><br>
+        To create a variable, specify the type and assign it a value:<br><br>
+        <h4 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">Syntax:- </h4><br>
+        <i style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;font: size 16px; ;">type variableName = value;</i><br>
+        <b><i>Where type is one of C++ types (such as int), and variableName is the name of the variable (such as x or myName).<br> 
+        The equal sign is used to assign values to the variable.</i>></b>>
+      </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h3 style="color: gold; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b><i><u>Example for Variable Declaration:-</u></i></b></h3></h1>
+      <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"><br>
+        <u style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: gold; font-size: 16px;">Example 1</u>:- Create a variable called myNum of type int and assign it the value 15: <br>
+        int X = 15; <br><br>
+        <u style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: gold; font-size: 16px;">Example 2</u>:- You can also declare a variable without assigning the value, and assign the value later: <br>
+        int A;<br>
+        A = 15;<br><br>
+        <u style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: gold;font-size: 16px;">Example 3</u>:- Note that if you assign a new value to an existing variable, it will overwrite the previous value:<br>
+        int C = 15;  // myNum is 15 <br>
+        C = 10;  // Now myNum is 10 <br><br>
+        <u style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: gold;font-size: 16px;">Example 4</u>:- Other Examples:-<br>
+        <ol style="font: size 16px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ">
+            <li>int myNum = 5;</li>&nbsp;&nbsp;// Integer (whole number without decimals)<br>
+            <li>double myFloatNum = 5.99;</li> &nbsp;&nbsp; // Floating point number (with decimals)<br>
+            <li>char myLetter = 'D';</li> &nbsp;&nbsp;// Character<br>
+            <li>string myText = "Hello";</li>&nbsp;&nbsp;// String (text)<br>
+            <li> bool myBoolean = true;  </li> <br>
+     </ol><br>
+     <textarea id="PROGRAM" rows="13" cols="50" style="border: 3px dashed yellow; resize: none;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+     #include<iostream>
+      using namespace std;
+      int main()
+      {
+        int a;
+        a=50;
+        int b = 20;
+        char a123 = 'a';
+        float c;
+        int _c, _d45, e;
+        cout<<a123<<endl;
+        return 0;
+      }
+    </textarea>&nbsp;&nbsp;<button id="copyID" onclick="myFunction()" value="COPY" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Copy Code</button>
+        <script type="text/javascript">
+          function myFunction() 
+          {
+      /* Get the text field */
+      var copyText = document.getElementById("PROGRAM");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+       /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+    
+      /* Alert the copied text */
+      alert("The code has been copied to clipboard");
+    var rand_url=new Array()
+            rand_url[0]="https://www.programiz.com/cpp-programming/online-compiler/";
+            rand_url[1]="https://www.onlinegdb.com/online_c++_compiler";
+            rand_url[2]="https://www.interviewbit.com/online-cpp-compiler/";
+            rand_url[3]="https://www.tutorialspoint.com/compile_cpp_online.php";
+    var rand_num=Math.floor(Math.random()*4);
+    window.location=rand_url[rand_num]
+    }
+        </script><br>
+        When the above code is compiled and executed, it produces the following result −<br><br>
+        a
+  </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\Comments.html" target="_self">Previous</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\VARIABLES_QUIZ.html" target="_blank">QUIZ ON VARIABLES</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\Datatypes.html" target="_self">Next</a>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+     
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+  function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode is ON";
+      }
+      function lightMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "light-mode";
+        content.innerText = "Dark Mode is OFF";
+      }
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

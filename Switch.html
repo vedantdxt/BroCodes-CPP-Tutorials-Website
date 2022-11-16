@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>C++ Switch Case</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+html,body.dark-mode {
+        background-color: black;
+        color: white;
+      }
+html,body.light-mode {
+        background-color: white;
+        color: black;
+      }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="C:\SEM 2 PROJECT\Home.html" target="_self" class="w3-bar-item w3-button w3-theme-l1">BroCodes</a>
+    <a href="C:\SEM 2 PROJECT\Intro.html" target="_self" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Tutorials</a>
+    <a href="C:\SEM 2 PROJECT\FACTS.html" target="_blank"  class="w3-bar-item w3-button w3-hide-small w3-hover-white">Quiz</a>
+    <a href="C:\SEM 2 PROJECT\ABOUT.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white" target="_blank">About</a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download (1).png" height="26" width="26" onclick="darkMode();"></a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download.png" height="26" width="26" onclick="lightMode();"></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h3 class="w3-bar-item"><img src="C:\SEM 2 PROJECT\BroCodes Logo.png" width="200" height="100"></h3>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Intro.html" target="_self">Introduction</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\History.html" target="_self">History</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Comments.html" target="_self">Comments</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\variables.html" target="_self">Variables</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Datatypes.html" target="_self">Datatypes</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Strings.html" target="_self">Strings</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Operators.html" target="_self">Operators</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Conditions.html" target="_self">Conditions</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Switch.html" target="_self">Switch Case</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\While.html" target="_self">While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\DoWhile.html" target="_self">Do.. While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\For.html" target="_self">For Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Break.html" target="_self">Break Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Continue.html" target="_self">Continue Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Array.html" target="_self">Arrays</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><h1 style="color: gold;"><b><i><u>C++ Switch Statement:-</u></i></b></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"><b><u>Switch Statement:-</u></b><br>
+        Switch case statement evaluates a given expression and based on the evaluated value(matching a certain condition), it executes the statements associated with it. <br>
+        Basically, it is used to perform different actions based on different conditions(cases).<br>
+        <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+          <li>Switch case statements follow a selection-control mechanism and allow a value to change control of execution.</li>
+          <li>They are a substitute for long if statements that compare a variable to several integral values.</li>
+          <li>The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.</li>
+        </ul><br>
+        <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        In C++, the switch statement is used for executing one condition from multiple conditions. It is similar to an if-else-if ladder.<br>
+        Switch statement consists of conditional based cases and a default case.<br>
+        In a switch statement, the “case value” can be of “char” and “int” type.<br><br> 
+        Following are some of the rules while using the switch statement:<br><br></p>
+        <ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+          <li>There can be one or N numbers of cases.</li>
+          <li>The values in the case must be unique.</li>
+          <li>Each statement of the case can have a break statement. It is optional.</li>
+        </ol><br>
+        <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: gold;"><b><i><u>Some important keywords:-</u></i></b></h3><br>
+        <ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+          <li> <b><u>Break:</u></b>This keyword is used to stop the execution inside a switch block. It helps to terminate the switch block and break out of it.</li>
+          <li><b><u>Default:</u></b>This keyword is used to specify the set of statements to execute if there is no case match.</li>
+        </ol><br><br>
+        <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: gold;"><b><i><u>Important Points About Switch Case Statements:-</u></i></b></h3><br>
+          <ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font: size 16px;">
+            <li>The expression provided in the switch should result in a <b><i>constant value</i></b> otherwise it would not be valid. </li>
+            <li>Duplicate case values are not allowed.</li>
+            <li>The <b><i>default statement</i></b> is optional. Even if the switch case statement do not have a default statement, it would run without any problem.</li>
+            <li>The <b><i>break statement</i></b> is used inside the switch to terminate a statement sequence. When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.</li>
+            <li>The <b><i>break statement</i></b> is optional. If omitted, execution will continue on into the next case. The flow of control will fall through to subsequent cases until a break is reached.</li>
+            <li><i><b>Nesting of switch statements is allowed</i></b>, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes the program more complex and less readable. </li>
+            <li>Switch statements are <i><b>limited to integer values and characters</b></i> only in the check condition.</li>
+          </ol>
+      </p>
+      </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: gold;"><u><b><i>Syntax:-</i></b></u></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        switch(expression)<br> 
+        {<br>
+            case x:<br>
+              // code block<br>
+              break;<br>
+            case y:<br>
+              // code block<br>
+              break;<br>
+            default:<br>
+              // code block<br>
+          }<br>
+        </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: gold;"><u><b><i>Examples:-</i></b></u></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        <textarea id="PROGRAM" rows="23" cols="50" style="border: 3px dashed gold; resize: none;">
+        #include<iostream>
+          using namespace std;
+          int main()
+          {
+              char x = 'A';
+              switch (x) 
+              {
+              case 'A':
+                  cout<<"Choice is A";
+                  break;
+              case 'B':
+                  cout<<"Choice is B";
+                  break;
+              case 'C':
+                  cout<<"Choice is C";
+                  break;
+              default:
+                  cout<<"Choice other than A, B and C";
+                  break;
+              }
+              return 0;
+          }
+        </textarea>&nbsp;&nbsp;<button id="copyID" onclick="myFunction()" value="COPY">Copy Code</button>
+        <script type="text/javascript">
+          function myFunction() 
+          {
+      /* Get the text field */
+      var copyText = document.getElementById("PROGRAM");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+       /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+    
+      /* Alert the copied text */
+      alert("The code has been copied to clipboard");
+    var rand_url=new Array()
+            rand_url[0]="https://www.programiz.com/cpp-programming/online-compiler/";
+            rand_url[1]="https://www.onlinegdb.com/online_c++_compiler";
+            rand_url[2]="https://www.interviewbit.com/online-cpp-compiler/";
+            rand_url[3]="https://www.tutorialspoint.com/compile_cpp_online.php";
+    var rand_num=Math.floor(Math.random()*4);
+    window.location=rand_url[rand_num]
+    }
+        </script><br>
+        When the above code is compiled and executed, it produces the following result −<br><br>
+        Choice is A
+    </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\Conditions.html" target="_self">Previous</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\SWITCH_QUIZ.html" target="_blank">QUIZ ON SWITCH</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\While.html" target="_self">Next</a>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+     <p></p>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+  function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode is ON";
+      }
+      function lightMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "light-mode";
+        content.innerText = "Dark Mode is OFF";
+      }
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

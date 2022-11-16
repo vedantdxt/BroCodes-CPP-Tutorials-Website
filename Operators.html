@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>C++ Operators</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+html,body.dark-mode {
+        background-color: black;
+        color: white;
+      }
+html,body.light-mode {
+        background-color: white;
+        color: black;
+      }
+table{
+  color: white;
+  background-color: black;
+  border-style: outset;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="C:\SEM 2 PROJECT\Home.html" target="_self" class="w3-bar-item w3-button w3-theme-l1">BroCodes</a>
+    <a href="C:\SEM 2 PROJECT\Intro.html" target="_self" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Tutorials</a>
+    <a href="C:\SEM 2 PROJECT\FACTS.html" target="_blank"  class="w3-bar-item w3-button w3-hide-small w3-hover-white">Quiz</a>
+    <a href="C:\SEM 2 PROJECT\ABOUT.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white" target="_blank">About</a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download (1).png" height="26" width="26" onclick="darkMode();"></a>
+    <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"><img src="C:\SEM 2 PROJECT\download.png" height="26" width="26" onclick="lightMode();"></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h3 class="w3-bar-item"><img src="C:\SEM 2 PROJECT\BroCodes Logo.png" width="200" height="100"></h3>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Intro.html" target="_self">Introduction</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\History.html" target="_self">History</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Comments.html" target="_self">Comments</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\variables.html" target="_self">Variables</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Datatypes.html" target="_self">Datatypes</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Strings.html" target="_self">Strings</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Operators.html" target="_self">Operators</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Conditions.html" target="_self">Conditions</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Switch.html" target="_self">Switch Case</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\While.html" target="_self">While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\DoWhile.html" target="_self">Do.. While Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\For.html" target="_self">For Loop</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Break.html" target="_self">Break Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="C:\SEM 2 PROJECT\Continue.html" target="_self">Continue Statement</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Arrays</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: darkred ;"><i><u><b>C++ Operators:-</b></u></i></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"> Operators are the foundation of any programming language.<br>
+         We can define operators as symbols that help us to perform specific mathematical and logical computations on operands. <br>
+        In other words, we can say that an operator operates the operands. <br> 
+        <ol style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+            <li>Arithmetic Operators</li>
+            <li>Assignment Opearators</li>
+            <li>Comparison Operators</li>
+            <li>Logical Operators</li>
+            <li>Bitwise Operators</li>
+        </ol><br><br>
+        <ul style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+          <li> <u><b>Arithmetic Operators:-</b></u>These operators are used to perform arithmetic/mathematical operations on operands.<br>
+             Examples: (+, -, *, /, %,++,–).<br>
+             <br> <i>Arithmetic operators are of two types: </i></li>
+             <br>
+             <ol>
+              <li>
+                <u><b>Unary Operators:-</b></u>Operators that operate or work with a single operand are unary operators.<br>
+                 For example: Increment(++) and Decrement(–) Operators.<br>
+              </li><br>
+              <li><u><b>Binary Operators:- </b></u>Operators that operate or work with two operands are binary operators. <br>
+                For example: Addition(+), Subtraction(-), multiplication(*), Division(/) operators.</li>
+             </ol><br>
+            <li><u><b>Relational Operators:-</b></u>These are used for the comparison of the values of two operands. <br>
+              For example, checking if one operand is equal to the other operand or not, whether an operand is greater than the other operand or not, etc.<br> 
+              Some of the relational operators are (==, &gt;= , &lt;= )(See this article for more reference).</li><br>
+              <li><u><b>Logical Operators:-</b></u>Logical Operators are used to combine two or more conditions/constraints or to complement the evaluation of the original condition in consideration.<br> 
+                The result of the operation of a logical operator is a Boolean value either true or false.<br> 
+                For example, the logical AND represented as ‘&&’ operator in C or C++ returns true when both the conditions under consideration are satisfied.<br>
+                 Otherwise, it returns false.<br>
+                  Therefore, a && b returns true when both a and b are true (i.e. non-zero)</li><br>
+                  <li><u><b>Bitwise Operators:-</b></u>
+                    The Bitwise operators are used to perform bit-level operations on the operands. <br>
+                    The operators are first converted to bit-level and then the calculation is performed on the operands.<br> 
+                    Mathematical operations such as addition, subtraction, multiplication, etc. can be performed at the bit-level for faster processing.<br>
+                     For example, the bitwise AND represented as & operator in C or C++ takes two numbers as operands and does AND on every bit of two numbers.<br>
+                     The result of AND is 1 only if both bits are 1. </li><br>
+                     <li><u><b>Assignment Operators:-</b></u> 
+                      Assignment operators are used to assign value to a variable.<br>
+                       The left side operand of the assignment operator is a variable and the right side operand of the assignment operator is a value. <br>
+                      The value on the right side must be of the same data type as the variable on the left side otherwise the compiler will raise an error. </li>
+        </ul>
+    </p>
+      </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"><h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: darkred ;"><u><b><i>Types of Opearators:-</i></b></u></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        <i><u>Arithmetic Operator are as follows:-</u></i><br><br>
+        <table style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+            <tr>
+            <th>Operator</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Example</th>
+                </tr>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+                <td>Adds together two values</td>
+                <td>x+y</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Substraction</td>
+                <td>Subtracts one value from another</td>
+                <td>a-b</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+                <td>Multiplies two values</td>
+                <td>c*d</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+                <td>Divides one value by another</td>
+                <td>a/b</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus</td>
+                <td>Returns the division remainder</td>
+                <td>x%y</td>
+            </tr>
+            <tr>
+                <td>++</td>
+                <td>Increment</td>
+                <td>Increases the value of a variable by 1</td>
+                <td>i++</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>Decrement</td>
+                <td>Decreases the value of a variable by 1</td>
+                <td>--a</td>
+            </tr></table><br>
+              <i style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"><u>Assignment Opeartors are as follows:-</u></i> <br><br>
+            <table style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+                <tr>
+                    <th>Operator</th>
+                    <th>Example</th>
+                    <th>Same as</th>
+                </tr>
+                <tr>
+                    <td>=</td>
+                    <td>a=10</td>
+                    <td>a=10</td>
+                </tr>
+                <tr>
+                    <td>+=</td>
+                    <td>x+=20</td>
+                    <td>x=x+20</td>
+                </tr>
+                <tr>
+                    <td>-=</td>
+                    <td>a-=10</td>
+                    <td>a=a-10</td>
+                </tr>
+                <tr>
+                    <td>*=</td>
+                    <td>a*=10</td>
+                    <td>a=a*10</td>
+                </tr>
+                <tr>
+                    <td>/=</td>
+                    <td>y/=8</td>
+                    <td>y=y/8</td>
+                </tr>
+                <tr>
+                    <td>%=</td>
+                    <td>x%=3</td>
+                    <td>x=x%3</td>
+                </tr>
+                <tr>
+                    <td>&=</td>
+                    <td>x&=2</td>
+                    <td>x=x&2</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>b|=30</td>
+                    <td>b=b|30</td>    
+                </tr>
+                <tr>
+                    <td>^=</td>
+                    <td>d^=22</td>
+                    <td>d=d^22</td>
+                </tr>
+                <tr>
+                    <td>&gt;&gt;=</td>
+                    <td>g&gt;&gt;=27</td>
+                    <td>g=g&gt;&gt;27</td>
+                </tr>
+                <tr>
+                    <td>&lt;&lt;= </td>
+                    <td>&lt;&lt;=58</td>
+                    <td>x=x&lt;&lt;58</td>
+                </tr>
+            </table><br>
+
+       <i style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"><u>Comparison Operators are:-</u></i> <br><br>
+        <table style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+            <tr>
+                <th>Operator</th>
+                <th>Name</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Equal to</td>
+                <td>a==b</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Not Equal to</td>
+                <td>x!=y</td>
+            </tr>
+            <tr>
+                <td>></td>
+                <td>Greater than</td>
+                <td>x>y</td>
+            </tr>
+            <tr>
+                <td>&lt;/td>
+                <td>Less than</td>
+                <td>a&lt;c</td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Greater than equal to</td>
+                <td>a&gt;=c</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Less than equal to</td>
+                <td>i&lt;=j</td>
+            </tr>
+        </table> <br>
+           <u><i style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;"> Logical Operators are as follows:-</i></u> <br><br>
+            <table style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+                <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>Logical AND</td>
+                    <td>Returns true if both statements are true</td>
+                    <td>a &lt; 5 &&  a &lt; 10</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>Logical OR</td>
+                    <td>Returns true if one of the statements is true</td>
+                    <td>b &lt; 5 || b &lt; 4	</td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>Logical NOT</td>
+                    <td>Reverse the result, returns false if the result is true</td>
+                    <td>!(c &lt; 5 && c &lt; 10)</td>
+                </tr>
+            </table>
+      </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal"style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><h1 style="color: darkred;"><b><u><i>Example:-</i></u></b></h1></h1>
+      <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">
+        <textarea id="PROGRAM" rows="24" cols="50" style="border: 3px dashed darkred; resize: none;">
+        #include<iostream>
+        using namespace std;
+        int main()
+        {
+          int a=2,b=5,c,d,e=6,f=4;
+          float g=5.5,h=6.8,i,k,l=9.0,m=3.0;
+          c=a+b;  //Arithmetic operator (+) 
+          d=e-f;  //Arithmetic operator (-) 
+          i=g*h;  //Arithmetic operator (*)  
+          k=l/m;  //Arithmetic operator (/) 
+          cout<<"Addition of a and b is:-"<<c<<endl; 
+          cout<<"Substraction of e and f is:-"<<d<<endl; 
+          cout<<"Multiplication of g and h is:-"<<i<<endl; 
+          cout<<"Division of l and m is:-"<<k<<endl; 
+        }</textarea>&nbsp;&nbsp;<button id="copyID" onclick="myFunction()" value="COPY">Copy Code</button>
+        <script type="text/javascript">
+          function myFunction() 
+          {
+      /* Get the text field */
+      var copyText = document.getElementById("PROGRAM");
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+       /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+    
+      /* Alert the copied text */
+      alert("The code has been copied to clipboard");
+    var rand_url=new Array()
+            rand_url[0]="https://www.programiz.com/cpp-programming/online-compiler/";
+            rand_url[1]="https://www.onlinegdb.com/online_c++_compiler";
+            rand_url[2]="https://www.interviewbit.com/online-cpp-compiler/";
+            rand_url[3]="https://www.tutorialspoint.com/compile_cpp_online.php";
+    var rand_num=Math.floor(Math.random()*4);
+    window.location=rand_url[rand_num]
+    }
+        </script><br>
+        When the above code is compiled and executed, it produces the following result −<br><br>
+        Addition of a and b is:-7<br>
+        Substraction of e and f is:-2<br>
+        Multiplication of g and h is:-37.4<br>
+        Division of l and m is:-3<br>
+    </p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\Strings.html" target="_self">Previous</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\OPERATORS_QUIZ.html" target="_blank">QUIZ ON OPERATORS</a>
+      <a class="w3-button w3-black" href="C:\SEM 2 PROJECT\Conditions.html" target="_self">Next</a>
+    </div>
+  </div>
+<!-- END MAIN -->
+</div>
+
+<script>
+  function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode is ON";
+      }
+      function lightMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "light-mode";
+        content.innerText = "Dark Mode is OFF";
+      }
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
